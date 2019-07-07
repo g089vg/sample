@@ -1,0 +1,59 @@
+package en_01;
+
+public class en_612 {
+
+
+	
+	public static void make_Array(int[] d) {
+		
+		for(int i = 0; i < d.length; i ++) {
+			d[i] = i ;
+		}
+	}
+	
+	public static int serch_Array(int [] d,int num) {
+		int a = 0;
+		int b =  (d.length -1) / 2;
+		int c = d.length -1;
+		
+		while( a <= c) {
+			b = (a + c) / 2;
+			System.out.println(a +"	"+b+"	"+ c);
+			if( d[b] == num ) {
+				break;
+			}
+			
+			else if( d[b] > num) {
+				c = b -1;
+
+			}
+			else{
+				a = b + 1;
+			}
+			
+			
+		}
+		
+		//System.out.println(b + 1);
+		return b;
+	}
+	
+	static void show(int [] d) {
+			for(int i = 0; i < d.length;i++) {
+				System.out.print(d[i]+",");
+			}
+			System.out.println();
+		
+	}
+	
+	
+	public static void main(String[] args) {
+		// TODO 自動生成されたメソッド・スタブ
+		int [] A = new int [1000];
+		int [] B = {1,2,3,4,5,6,7,8,9,10} ;
+		make_Array(A);
+		show(A);
+		serch_Array(A , 345);
+	}
+
+}
